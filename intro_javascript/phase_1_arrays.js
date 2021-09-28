@@ -7,3 +7,16 @@ Array.prototype.uniq = function () {
   });
   return uniques;
 };
+
+Array.prototype.twoSum = function () {
+  let pairs = [];
+
+  for (let i=0; i < this.length; i++) {
+    for (let j=i+1; j < this.length; j++) {
+      if (this[i] + this[j] === 0) {
+        pairs.push([i, j])
+      }
+    }
+  }
+  return pairs;
+}
