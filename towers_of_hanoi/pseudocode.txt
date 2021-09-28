@@ -1,0 +1,7 @@
+Game.prototype.run
+    display the towers/state of Game
+    get user input (move which piece)
+    check that it's valid move
+        move if it's valid
+        if invalid move, re-prompt the player
+    check if game is over
