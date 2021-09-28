@@ -17,7 +17,12 @@ Game.prototype.promptMove = function(callback) {
     reader.question("Move to?", function (answer) {
       let to = answer;
 
-      callback(from, to);
+      move(from, to);
+      if (isWon()) {
+        callback();
+      } else {
+        game.run(callback);
+      }
     });
   });
 }
@@ -48,10 +53,6 @@ const move = function(from, to) {
   }
   let disc = game.towers[from].shift();
   game.towers[to].unshift(disc);
-
-  if (!isWon()) {
-    game.run();
-  }
   return true;
 }
 
@@ -81,12 +82,7 @@ const isWon = function() {
 }
 
 Game.prototype.run = function(callback) {
-  let move_result = this.promptMove(move)
-  // if (isWon()) {
-  //   callback();
-  // } else {
-  //   this.run();
-  // }
+  this.promptMove(callback)
 }
 
 game.run(function() {
