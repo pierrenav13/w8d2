@@ -1,4 +1,4 @@
-Array.prototype.uniq = function () {
+Array.prototype.uniq = function() {
   let uniques = [];
   this.forEach( el => {
     if (!uniques.includes(el)) {
@@ -8,7 +8,7 @@ Array.prototype.uniq = function () {
   return uniques;
 };
 
-Array.prototype.twoSum = function () {
+Array.prototype.twoSum = function() {
   let pairs = [];
 
   for (let i=0; i < this.length; i++) {
@@ -21,7 +21,7 @@ Array.prototype.twoSum = function () {
   return pairs;
 }
 
-Array.prototype.transpose = function () {
+Array.prototype.transpose = function() {
   let transpose = [];
   for (let i=0; i < this[0].length; i++) {
     let new_col = [];
