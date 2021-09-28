@@ -42,3 +42,22 @@ function deepDup(arr) {
   });
   return copy;
 }
+
+function bsearch(arr, target) {
+  let mid = Math.floor(arr.length/2);
+
+  if (target < arr[mid]) {
+    return bsearch(arr.slice(0, mid), target)
+  } else if (target > arr[mid]) {
+    result = bsearch(arr.slice(mid+1), target)
+    if (result !== -1) {
+      return mid+1+result;
+    } else {
+      return -1;
+    }
+  } else if (target === arr[mid]) {
+    return mid;
+  } else {
+    return -1;
+  }
+}
