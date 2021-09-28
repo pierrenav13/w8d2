@@ -85,3 +85,16 @@ function merge(arr1, arr2) {
 
   return merged.concat(arr1).concat(arr2);
 }
+
+function subsets(arr) {
+  if (arr.length === 0) {
+    return [[]];
+  }
+  let subs = subsets(arr.slice(1));
+  let more_subs = subs.map( el => {
+    let clone = el.slice();
+    clone.push(arr[0]);
+    return clone;
+  });
+  return subs.concat(more_subs);
+}
